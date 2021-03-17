@@ -1,0 +1,15 @@
+.filterList {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    label {
+        width: 100%;
+        border-bottom: 1px solid #a85f2a6a;
+        display: flex;
+        justify-content: space-between;
+        margin: 8px;
+    }
+}
