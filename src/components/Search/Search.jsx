@@ -6,7 +6,7 @@ const Search = (props) => {
 
     return (
         <div className={styles.search}>
-            <input type="text" placeholder="Search..." onChange={(e) => {searchBeers(e.target.value);setSearchText(e.target.value)}}/>
+            <input type="text" placeholder="Search by name..." onChange={(e) => {searchBeers(e.target.value);setSearchText(e.target.value)}}/>
         </div>
     )
 }

@@ -10,7 +10,7 @@ function App() {
   const [searchText,setSearchText] = useState("");
 
   const fetchBeers = () => {
-    return fetch("https://api.punkapi.com/v2/beers?page=2&per_page=27")
+    return fetch("https://api.punkapi.com/v2/beers?page=2&per_page=54")
     .then(response => response.json())
     .then(data => data.map(beer => beer))
   }
