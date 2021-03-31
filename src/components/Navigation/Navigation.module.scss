@@ -1,4 +1,5 @@
 .nav {
+    position: fixed;
     display:flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -6,6 +7,8 @@
     
     grid-column-start: 1;
     grid-column-end: 2;
+
+    margin-left: 3%;
 
     h1 {
         margin-top: 20%;
@@ -16,7 +19,7 @@
 @media only screen and (max-width: 1024px) {
     .navMob{
         height: 50vh;
-        position: absolute;
+        position: fixed;
         background-color: white;
         z-index: 2;
 
@@ -46,7 +49,7 @@
     .open {
         background-color: white;
         width: 100%;
-        position: absolute;
+        position: fixed;
         top:0;
         left: 0;
         right: 0;

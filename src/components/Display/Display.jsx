@@ -40,9 +40,9 @@ const Display = (props) => {
     }
     
     const shortenDescription = (description) =>{
-        return description.length < 230
+        return description.length < 235
         ? description
-        : description.substring(0, 225) + "...";
+        : description.substring(0, 230) + "...";
     }
 
     return (
