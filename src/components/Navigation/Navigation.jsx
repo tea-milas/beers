@@ -1,16 +1,20 @@
-import React from 'react'
-import styles from './Navigation.module.scss'
-import Search from '../Search/Search.jsx'
-import Filters from '../Filters/Filters.jsx'
+import React,{useState} from 'react'
+import Mobile from './Mobile/Mobile.jsx'
+import Desktop from './Desktop/Desktop'
+
 
 const Navigation = (props) => {
     const {setSearchText, setBeers, searchBeers, wholeList} = props;
+
+    const detectMob = () => {
+        return ( ( window.innerWidth <= 1025 ) && ( window.innerHeight <= 1025 ) );
+      }
+    
     return (
-        <nav className={styles.nav}>
-            <h1>Punk API</h1>
-            <Search setSearchText={setSearchText} searchBeers={searchBeers}/>
-            <Filters setBeers={setBeers} wholeList={wholeList}/>
-        </nav>
+        <>
+            {detectMob() ? <Mobile setSearchText={setSearchText} searchBeers={searchBeers} setBeers={setBeers} wholeList={wholeList} /> : 
+                           <Desktop setSearchText={setSearchText} searchBeers={searchBeers} setBeers={setBeers} wholeList={wholeList}/>}
+        </>
     )
 }
 

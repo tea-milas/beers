@@ -5,5 +5,23 @@
         border: 2px solid #A85E2A;
         color: #A85E2A;
     }
+
+    .fa {
+        margin-left: 10px;
+        color: #A85E2A;
+    }
     
+}
+
+@media only screen and (max-width: 1024px) {
+    .search {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+
+       input {
+           width: 70%;
+           height: 25px;
+       }
+    }
 }

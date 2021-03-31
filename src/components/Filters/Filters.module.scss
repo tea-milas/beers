@@ -13,3 +13,15 @@
         margin: 8px;
     }
 }
+
+@media only screen and (max-width: 1024px) {
+    .filterList {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 50px;
+
+        label {
+            width: 80%;
+        }
+    }
+}

@@ -99,7 +99,6 @@ const Filters = (props) => {
 
     return (
         <div className={styles.filterList}>
-            {console.log(abv)}
             <label>High ABV ({">"} 6.0%)
             <input type="checkbox" onChange={()=>toggleAbvFilter()}/></label>
             <label>EBC {">"} 20

@@ -5,5 +5,12 @@
   grid-template-columns: 250px 2fr;
   grid-gap: 5px;
 
-  background-color: #F6F6F6;
+  background-color: #ffffff;
+}
+
+@media only screen and (max-width: 1025px) {
+  .container {
+      display: flex;
+      overflow-x: hidden;
+  }
 }

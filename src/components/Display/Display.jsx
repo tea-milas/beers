@@ -68,6 +68,7 @@ const Display = (props) => {
                                 </section>   
                             </div>
             })}
+
         </div>
     )
 }

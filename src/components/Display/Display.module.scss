@@ -141,7 +141,7 @@
     }
 
     .beerCard {
-        margin: 15px 0 10px 5%;
+        margin: 15px 0 10px 0;
         height: auto;
         width: 90%;
         background-color: rgba($color: #d2dde034, $alpha: 0.5);
@@ -185,8 +185,12 @@
 
 @media only screen and (max-width: 750px) {
     .display {
-        grid-template-columns: 1fr;
-        row-gap: 10px;
+        margin: 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
     }
 
     .beerCard {
