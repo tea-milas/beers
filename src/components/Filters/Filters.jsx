@@ -1,9 +1,9 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import styles from './Filters.module.scss'
 
 
 const Filters = (props) => {
-    const {setBeers, wholeList} = props
+    const {setBeers, wholeList} = props;
 
     const [isSelected,setSelected] = useState(false);
     const [abv, setAbv] = useState(false);
@@ -31,22 +31,34 @@ const Filters = (props) => {
             return await wholeList().then(beers =>setBeers(beers))
        }
     } */
+    
+    useEffect(() => {
+        abvFilter();
+    }, [abv]);
 
+    useEffect(() => {
+        acidicFilter();
+    }, [acidic]);
+
+    useEffect(() => {
+        ebcFilter();
+    }, [ebc]);
+
+    
     const abvFilter = () => {
         console.log("running function im",abv)
-        if (abv === false){
+        if (abv){
             return fetch("https://api.punkapi.com/v2/beers?abv_gt=6")
             .then(response => response.json())
             .then(data => setBeers(data.map(beer => beer)))
         } else {
             console.log("I'll return OG list")
             return wholeList().then(beers =>setBeers(beers))
-
         } 
     }
 
     const acidicFilter = () => {
-        if (acidic === false) {
+        if (acidic) {
             return fetch("https://api.punkapi.com/v2/beers")
             .then(response => response.json())
             .then(data => {
@@ -59,7 +71,7 @@ const Filters = (props) => {
 
     const ebcFilter = () => {
         console.log("running function im",ebc)
-        if (ebc === false){
+        if (ebc){
             return fetch("https://api.punkapi.com/v2/beers?ebc_gt=20")
             .then(response => response.json())
             .then(data => setBeers(data.map(beer => beer)))
@@ -68,17 +80,7 @@ const Filters = (props) => {
         } 
     }
 
-    const toggleAbvFilter = () => {
-        abv ? abvFilter(setAbv(false)) : abvFilter(setAbv(true));
-    }
-
-    const toggleAcidFilter = () => {
-       acidic ? acidicFilter(setAcidic(false)) : acidicFilter(setAcidic(true));
-    }
-    
-    const toggleEbcFilter = () => {
-        ebc ? ebcFilter(setEbc(false)) : ebcFilter(setEbc(true));
-     }
+   
 
     /* const checkIfToggled = () => {
        if (abv && acidic){
@@ -100,11 +102,11 @@ const Filters = (props) => {
     return (
         <div className={styles.filterList}>
             <label>High ABV ({">"} 6.0%)
-            <input type="checkbox" onChange={()=>toggleAbvFilter()}/></label>
+            <input type="checkbox" onClick={()=>setAbv(!abv)}/></label>
             <label>EBC {">"} 20
-            <input type="checkbox" onChange={()=>toggleEbcFilter()}/></label>
+            <input type="checkbox" onClick={()=>setEbc(!ebc)}/></label>
             <label>Acidic (pH {"<"} 4)
-            <input type="checkbox" onChange={()=>toggleAcidFilter()}/></label>
+            <input type="checkbox" onClick={()=>setAcidic(!acidic)}/></label>
         </div>
     )
 }

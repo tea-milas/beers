@@ -48,7 +48,7 @@ const Display = (props) => {
     return (
         <div className={styles.display}>
             {beers.map(beer => {
-                      return <div className={styles.beerCard}>
+                      return <div className={styles.beerCard} key={beer.id}>
                                 <img src={beer.image_url} alt={beer.name} />
                                 <section className={styles.textArea}>
                                     <h2>{beer.name}</h2>
