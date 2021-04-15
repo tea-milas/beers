@@ -5,7 +5,6 @@ import styles from './Filters.module.scss'
 const Filters = (props) => {
     const {setBeers, wholeList} = props;
 
-    const [isSelected,setSelected] = useState(false);
     const [abv, setAbv] = useState(false);
     const [acidic,setAcidic] = useState(false);
     const [ebc,setEbc] = useState(false);
