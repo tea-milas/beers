@@ -1,5 +1,5 @@
 # Front-end for Punk API
-* Visit the website: <A HREF="https://punk-api-tea.herokuapp.com/" target="_blank" > HERE </a>
+* Visit the website: <A HREF="https://punkapi.teamilas.com/" target="_blank" > HERE </a>
 * This project was made using Punk API, React and SCSS.
 
 It allows you to search for beers by name or filter by given criteria.
